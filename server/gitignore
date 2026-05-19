@@ -13,7 +13,7 @@ npm-debug.log*
 dist/
 build/
 
-# OS files
+# OS file
 .DS_Store
 Thumbs.db
 
