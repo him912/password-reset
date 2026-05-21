@@ -1,38 +1,267 @@
-/* .App {
+/* Background styling for the entire page */
+.forgot-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #ffecd2,
+    #fcb69f
+  ); /* Light orange gradient */
+  margin: 0;
+}
+
+/* General styles */
+body {
+  font-family: "Poppins", sans-serif; /* Use Google Font */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive page container */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #ffecd2,
+    #fcb69f
+  ); /* Light orange gradient */
+  padding: 1rem;
+}
+
+/* Card styling */
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #fffaf0; /* Light orange background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.icon {
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Heading styling */
+.heading {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Subtext styling */
+.subtext {
+  color: #6c757d; /* Bootstrap muted text color */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Input field styling */
+.input {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e0a800; /* Darker orange on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .subtext {
+    font-size: 0.8rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+/* Background styling for the entire page */
+.reset-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    #ffecd2,
+    #fcb69f
+  ); /* Light orange gradient */
+  margin: 0;
+}
+
+/* Card styling */
+.reset-password-card {
+  width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #fffaf0; /* Light orange background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.reset-password-icon {
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Heading styling */
+.reset-password-heading {
+  margin-top: 1rem;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Subtext styling */
+.reset-password-subtext {
+  color: #6c757d; /* Bootstrap muted text color */
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Input field styling */
+.reset-password-input {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Button styling */
+.reset-password-button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: #ffc107; /* Bootstrap warning color */
   color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.reset-password-button:hover {
+  background-color: #e0a800; /* Darker orange on hover */
+}
+/* Card styling */
+.forgot-password-card {
+  width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #fffaf0; /* Light orange background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+/* Icon styling */
+.forgot-password-icon {
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Heading styling */
+.forgot-password-heading {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Subtext styling */
+.forgot-password-subtext {
+  color: #6c757d; /* Bootstrap muted text color */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.forgot-password-input {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.forgot-password-button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.forgot-password-button:hover {
+  background-color: #e0a800; /* Darker orange on hover */
+}
