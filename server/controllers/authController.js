@@ -28,17 +28,23 @@ exports.forgotPassword = async (req, res) => {
       service: "gmail",
       host: process.env.MAIL_SMTP_HOST,
       port: process.env.MAIL_SMTP_PORT,
-       secure: false,  
-         tls: {
-       rejectUnauthorized: false,
-         },
+      secure: false,
+      tls: {
+        rejectUnauthorized: false,
+      },
 
-     family: 4, 
+      family: 4,
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
       auth: {
         user: process.env.MAIL_SMTP_USER,
         pass: process.env.MAIL_SMTP_PASSWORD,
       },
     });
+
+    // Verify SMTP connection
+    await transporter.verify();
 
     const resetLink = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
 
