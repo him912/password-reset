@@ -23,8 +23,8 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "https://userauthoi.com/api/auth/login",
-        formData
+        "https://userauthorization.onrender.com/api/auth/login",
+        JSON.stringify(formData),
       );
 
       console.log(res.data);

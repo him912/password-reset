@@ -22,6 +22,15 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Password-reset MVC API");
 });
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3005",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
