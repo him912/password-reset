@@ -24,10 +24,10 @@ function Login() {
     try {
       const res = await axios.post(
         "https://userauthorization.onrender.com/api/auth/login",
-        JSON.stringify(formData),
+        formData,
       );
 
-      console.log(res.data);
+      // console.log(res.data); 
 
       alert("Login Successful");
 
@@ -49,9 +49,7 @@ function Login() {
 
           <h2 className="forgot-password-heading">Login</h2>
 
-          <p className="forgot-password-subtext">
-            Login to your account
-          </p>
+          <p className="forgot-password-subtext">Login to your account</p>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -73,20 +71,15 @@ function Login() {
             onChange={handleChange}
           />
 
-          <button className="forgot-password-button">
-            Login
-          </button>
+          <button className="forgot-password-button">Login</button>
         </form>
 
         <div style={{ marginTop: "15px" }}>
-          <Link to="/forgot-password">
-            Forgot Password?
-          </Link>
+          <Link to="/forgot-password">Forgot Password?</Link>
         </div>
 
         <div style={{ marginTop: "10px" }}>
-          Don't have an account?{" "}
-          <Link to="/register">Register</Link>
+          Don't have an account? <Link to="/register">Register</Link>
         </div>
       </div>
     </div>
