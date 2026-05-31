@@ -25,10 +25,8 @@ function Login() {
       
       const res = await axios.post(
         "https://userauthorization.onrender.com/api/auth/login",
-        JSON.stringify(formData),
+        formData,
       );
-
-      // console.log(res.data); 
 
       alert("Login Successful");
 

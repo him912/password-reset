@@ -25,13 +25,8 @@ function Register() {
     try {
       const res = await axios.post(
         "https://userauthorization.onrender.com/api/auth/register",
-           JSON.stringify(formData),
-           {
-  withCredentials: true,
-}
+           formData   
       );
-
-      console.log(res.data);
 
       alert("Registration Successful");
 
