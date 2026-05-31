@@ -22,9 +22,13 @@ function Login() {
     e.preventDefault();
 
     try {
+      
       const res = await axios.post(
         "https://userauthorization.onrender.com/api/auth/login",
         JSON.stringify(formData),
+        {
+      withCredentials: true,
+       }
       );
 
       console.log(res.data);
@@ -33,7 +37,7 @@ function Login() {
 
       localStorage.setItem("token", res.data.token);
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");
     }

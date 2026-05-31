@@ -249,6 +249,177 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Home screen styles */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  padding: 2rem;
+}
+
+.home-card {
+  width: min(100%, 760px);
+  background-color: #fffaf0;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.home-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background-color: #ffc107;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.home-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.home-subtext {
+  margin: 0.35rem 0 0;
+  color: #6c757d;
+  max-width: 520px;
+}
+
+.home-welcome-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 22px;
+  background: #ffe7c5;
+}
+
+.home-welcome-box h2 {
+  margin: 0 0 0.5rem;
+}
+
+.home-welcome-box p {
+  margin: 0;
+  color: #5a5a5a;
+}
+
+.home-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4f4f4f;
+  font-weight: 600;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-card-item {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.home-card-item h3 {
+  margin: 1rem 0 0.75rem;
+}
+
+.home-card-item p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.item-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #ffe3a8;
+  color: #b07500;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.home-button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.95rem 1.75rem;
+  background-color: #ffc107;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-button:hover {
+  transform: translateY(-1px);
+  background-color: #e0a800;
+}
+
+.home-button-secondary {
+  background-color: transparent;
+  color: #6c757d;
+  border: 1px solid #ffc107;
+}
+
+.home-button-secondary:hover {
+  background-color: #fff3d9;
+}
+
+@media (max-width: 768px) {
+  .home-card {
+    padding: 1.75rem;
+  }
+
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-actions {
+    justify-content: stretch;
+  }
+
+  .home-button {
+    width: 100%;
+  }
+
+  .home-button-secondary {
+    width: 100%;
+  }
+}
+
 /* Button styling */
 .forgot-password-button {
   font-size: 1rem;
@@ -264,4 +435,199 @@ body {
 
 .forgot-password-button:hover {
   background-color: #e0a800; /* Darker orange on hover */
+}
+
+/* Home Page Styling */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    to right,
+    #ffecd2,
+    #fcb69f
+  ); /* Light orange gradient */
+  padding: 2rem 1rem;
+  margin: 0;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-card {
+  width: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background-color: #fffaf0; /* Light orange background */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.home-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0px 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+.home-heading {
+  margin: 0.5rem 0;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+
+.home-subtext {
+  color: #ff9800;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.home-content {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #fff8f0;
+  border-radius: 15px;
+  border-left: 4px solid #ffc107;
+}
+
+.user-info {
+  margin-bottom: 1.5rem;
+}
+
+.user-info:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.home-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  padding: 0.85rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0px 4px 10px rgba(255, 193, 7, 0.3);
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(255, 193, 7, 0.4);
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+.home-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ffe0b2;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .home-heading {
+    font-size: 1.5rem;
+  }
+
+  .home-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .info-value {
+    font-size: 1rem;
+  }
+
+  .logout-button {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    padding: 1rem;
+  }
+
+  .home-card {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .home-heading {
+    font-size: 1.3rem;
+  }
+
+  .home-content {
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .info-label {
+    font-size: 0.8rem;
+  }
+
+  .info-value {
+    font-size: 0.95rem;
+  }
 }
