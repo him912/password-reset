@@ -27,6 +27,7 @@ app.use(
     origin: [
       "http://localhost:3005",
       "http://localhost:3000",
+      "https://sweet-centaur-8df9e0.netlify.app"
     ],
     credentials: true,
   })

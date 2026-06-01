@@ -17,6 +17,7 @@ function ResetPassword() {
       );
 
       alert(res.data.message);
+         navigate("/login");
     } catch (error) {
       alert(error.response.data.message);
     }

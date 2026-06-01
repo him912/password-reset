@@ -25,7 +25,7 @@ function Register() {
     try {
       const res = await axios.post(
         "https://userauthorization.onrender.com/api/auth/register",
-           formData   
+        formData   
       );
 
       alert("Registration Successful");
