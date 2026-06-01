@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { FaLock } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function ResetPassword() {
   const { token } = useParams(); // Get the token from the URL
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ function ResetPassword() {
       );
 
       alert(res.data.message);
-         navigate("/login");
+         navigate("/");
     } catch (error) {
       alert(error.response.data.message);
     }
