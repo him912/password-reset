@@ -1,17 +1,7 @@
 const User = require("../models/User");
 const crypto = require("crypto");
-const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
-
-const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_SMTP_HOST,
-  port: Number(process.env.MAIL_SMTP_PORT),
-  secure: process.env.MAIL_SMTP_ENCRYPTION === "ssl",
-  auth: {
-    user: process.env.MAIL_SMTP_USER,
-    pass: process.env.MAIL_SMTP_PASSWORD,
-  },
-});
+const { sendEmail } = require("../utils/sendEmail");
 
 exports.forgotPassword = async (req, res) => {
   try {
@@ -45,10 +35,8 @@ exports.forgotPassword = async (req, res) => {
     const resetLink = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
     // console.log("Reset Link:", resetLink);
 
-    // Send email using Gmail SMTP
     try {
-      await transporter.sendMail({
-        from: `"${process.env.MAIL_FROM_NAME || "password-rest"}" <${process.env.MAIL_FROM_ADDRESS || process.env.MAIL_SMTP_USER}>`,
+      await sendEmail({
         to: email,
         subject: "Password Reset Request",
         html: `
