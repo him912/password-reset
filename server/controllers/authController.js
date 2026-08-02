@@ -1,12 +1,16 @@
 const User = require("../models/User");
 const crypto = require("crypto");
-const { MailtrapClient } = require("mailtrap");
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcryptjs");
 
-// Initialize Mailtrap Client
-const client = new MailtrapClient({
-  token: process.env.MAILTRAP_API_TOKEN,
+const transporter = nodemailer.createTransport({
+  host: process.env.MAIL_SMTP_HOST,
+  port: Number(process.env.MAIL_SMTP_PORT),
+  secure: process.env.MAIL_SMTP_ENCRYPTION === "ssl",
+  auth: {
+    user: process.env.MAIL_SMTP_USER,
+    pass: process.env.MAIL_SMTP_PASSWORD,
+  },
 });
 
 exports.forgotPassword = async (req, res) => {
@@ -41,18 +45,11 @@ exports.forgotPassword = async (req, res) => {
     const resetLink = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
     // console.log("Reset Link:", resetLink);
 
-    // Send email using Mailtrap SDK
+    // Send email using Gmail SMTP
     try {
-      await client.send({
-        from: {
-          email: process.env.MAIL_SMTP_USER,
-          name: process.env.MAIL_FROM_NAM || "Password Reset",
-        },
-        to: [
-          {
-            email: email,
-          },
-        ],
+      await transporter.sendMail({
+        from: `"${process.env.MAIL_FROM_NAME || "password-rest"}" <${process.env.MAIL_FROM_ADDRESS || process.env.MAIL_SMTP_USER}>`,
+        to: email,
         subject: "Password Reset Request",
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -68,7 +65,6 @@ exports.forgotPassword = async (req, res) => {
             <p style="color: #999; font-size: 12px;">© 2026 Password Reset. All rights reserved.</p>
           </div>
         `,
-        category: "Password Reset",
       });
 
       // console.log("Reset email sent successfully to:", email);
